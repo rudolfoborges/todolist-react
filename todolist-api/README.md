@@ -1,11 +1,11 @@
-### Plugins
+# Plugins
 - eslint
 - prettier
 
-### ORM
+# ORM
 - Typeorm
 - Site: typeorm.io
-# Comandos
+## Comandos
 - yarn typeorm migration:create -n CreateUsers
 - yarn typeorm migration:run
 - yarn typeorm migration:revert
