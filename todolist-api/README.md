@@ -1,4 +1,4 @@
-# Plugins
+# Plugins VSCode
 - eslint
 - prettier
 
