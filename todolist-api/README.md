@@ -13,6 +13,16 @@
 - () Criar sessão para usuários logados
 - () Validar se o usuário fez login antes de realizar algumas ações
 
+# Comandos para criar o projeto
+- Iniciar um projeto: yarn init (Vai criar o package.json com as informaçãoes iniciais)
+- Instalar o typescript: yarn add typescript -D
+- Configurar o typescript: npx typescript --init (Vai criar o arquivo tsconfig.json)
+
+# Configurar ESLINT
+- instalar as depedências:
+- yarn add eslint prettier eslint-config-airbnb-base eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser -D
+- Copiar os arquivos .eslint.js .eslintignore .prettierrc.js e colar na raiz do projeto
+
 # Plugins VSCode
 - eslint
 - prettier
