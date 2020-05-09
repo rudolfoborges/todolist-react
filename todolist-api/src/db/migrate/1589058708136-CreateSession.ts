@@ -5,47 +5,43 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class CreateTasks1589000902943 implements MigrationInterface {
+export class CreateSession1589058708136 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'tasks',
+        name: 'sessions',
         columns: [
           {
             name: 'id',
             type: 'int',
             isPrimary: true,
             isGenerated: true,
-            isNullable: true,
+            isNullable: false,
           },
           {
-            name: 'title',
+            name: 'token',
             type: 'varchar',
             isNullable: false,
           },
           {
-            name: 'description',
-            type: 'text',
+            name: 'created_at',
+            type: 'timestamp',
             isNullable: false,
+            default: 'now()',
           },
           {
             name: 'user_id',
             type: 'int',
             isNullable: false,
           },
-          {
-            name: 'completed_at',
-            type: 'timestamp',
-            isNullable: true,
-          },
         ],
       }),
     );
 
     await queryRunner.createForeignKey(
-      'tasks',
+      'sessions',
       new TableForeignKey({
-        name: 'tasks_users_fk',
+        name: 'sessions_users_fk',
         columnNames: ['user_id'],
         referencedTableName: 'users',
         referencedColumnNames: ['id'],
@@ -54,7 +50,6 @@ export class CreateTasks1589000902943 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('tasks', 'tasks_users_fk');
-    await queryRunner.dropTable('tasks');
+    await queryRunner.dropForeignKey('sessions', 'sessions_users_fk');
   }
 }
