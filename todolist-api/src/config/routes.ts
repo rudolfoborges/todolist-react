@@ -1,10 +1,12 @@
-import { Router } from 'express'
+import { Router } from 'express';
 import UsersController from '../app/controllers/UsersController';
 import TasksController from '../app/controllers/TasksController';
 
 const routes = Router();
 
-routes.post('/login', () => {});
+routes.post('/login', () => {
+  console.log('Login');
+});
 
 routes.get('/users', UsersController.index);
 routes.post('/users', UsersController.create);
